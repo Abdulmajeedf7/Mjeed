@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>لعبة - نسخة سي جيم (تجريبي)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>لعبة trivia — نسخة شبيهة بـ "سي جيم"</h1>
+      <div class="controls">
+        <button id="btn-start">ابدأ اللعبة</button>
+        <label>مدة السؤال:
+          <select id="time-select">
+            <option value="20">20 ثانية</option>
+            <option value="30" selected>30 ثانية</option>
+            <option value="45">45 ثانية</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main id="main-area" class="hidden">
+      <section id="setup">
+        <h2>إعداد الفرق</h2>
+        <div id="teams-list"></div>
+        <input id="team-name" placeholder="اسم الفريق..." />
+        <button id="add-team">أضف فريق</button>
+        <button id="start-play" class="primary">ابدأ الجولة</button>
+      </section>
+
+      <section id="board" class="hidden">
+        <div id="board-top">
+          <div id="categories"></div>
+        </div>
+        <div id="board-grid"></div>
+      </section>
+
+      <section id="question-panel" class="hidden">
+        <div class="question-header">
+          <div id="current-category"></div>
+          <div id="current-value"></div>
+        </div>
+        <div id="question-text"></div>
+        <div id="answers"></div>
+        <div id="timer">الوقت: <span id="time-left"></span>s</div>
+        <div class="lifelines">
+          <button id="ll-50">إلغاء خيارين</button>
+          <button id="ll-skip">تجاوز السؤال</button>
+          <button id="ll-double">ضربة مزدوجة</button>
+        </div>
+        <div class="q-controls">
+          <button id="btn-submit" class="primary">تأكيد الإجابة</button>
+          <button id="btn-cancel">إلغاء</button>
+        </div>
+      </section>
+
+      <section id="scoreboard" class="hidden">
+        <h2>النتيجة</h2>
+        <div id="scores"></div>
+        <button id="btn-reset">إعادة اللعب</button>
+      </section>
+    </main>
+
+    <footer>
+      <small>نسخة تجريبية — الأسئلة معاد صياغتها لتجنب حقوق النشر.</small>
+    </footer>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
